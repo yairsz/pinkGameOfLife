@@ -21,6 +21,8 @@
 		B03989BD18919AD4005265F5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B039899F18919AD3005265F5 /* UIKit.framework */; };
 		B03989C518919AD4005265F5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B03989C318919AD4005265F5 /* InfoPlist.strings */; };
 		B03989C718919AD4005265F5 /* GameOfLifeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B03989C618919AD4005265F5 /* GameOfLifeTests.m */; };
+		B03989D218919B11005265F5 /* YSCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B03989D118919B11005265F5 /* YSCell.m */; };
+		B03989D518919CE8005265F5 /* YSGrid.m in Sources */ = {isa = PBXBuildFile; fileRef = B03989D418919CE8005265F5 /* YSGrid.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,10 @@
 		B03989C218919AD4005265F5 /* GameOfLifeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GameOfLifeTests-Info.plist"; sourceTree = "<group>"; };
 		B03989C418919AD4005265F5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B03989C618919AD4005265F5 /* GameOfLifeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameOfLifeTests.m; sourceTree = "<group>"; };
+		B03989D018919B11005265F5 /* YSCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSCell.h; sourceTree = "<group>"; };
+		B03989D118919B11005265F5 /* YSCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSCell.m; sourceTree = "<group>"; };
+		B03989D318919CE8005265F5 /* YSGrid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSGrid.h; sourceTree = "<group>"; };
+		B03989D418919CE8005265F5 /* YSGrid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSGrid.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +88,10 @@
 		B039898F18919AD3005265F5 = {
 			isa = PBXGroup;
 			children = (
+				B03989D318919CE8005265F5 /* YSGrid.h */,
+				B03989D418919CE8005265F5 /* YSGrid.m */,
+				B03989D018919B11005265F5 /* YSCell.h */,
+				B03989D118919B11005265F5 /* YSCell.m */,
 				B03989A118919AD3005265F5 /* GameOfLife */,
 				B03989C018919AD4005265F5 /* GameOfLifeTests */,
 				B039899A18919AD3005265F5 /* Frameworks */,
@@ -251,8 +261,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B03989B218919AD3005265F5 /* YSViewController.m in Sources */,
+				B03989D518919CE8005265F5 /* YSGrid.m in Sources */,
 				B03989AC18919AD3005265F5 /* YSAppDelegate.m in Sources */,
 				B03989A818919AD3005265F5 /* main.m in Sources */,
+				B03989D218919B11005265F5 /* YSCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
