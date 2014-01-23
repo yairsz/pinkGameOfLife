@@ -13,25 +13,17 @@
 -(YSGrid *) initWithXSize:(NSInteger)xSize andYSize:(NSInteger)ySize
 {
     self = [super init];
-    
     self.columnsOfRows = [NSMutableArray new];
-    
     for(int xCount = 0 ; xCount < xSize ;  xCount++){
-        
         NSMutableArray *rows = [NSMutableArray new];
-        
         for(int yCount = 0 ; yCount < ySize ; yCount++ ){
             
             YSCell *newCell = [[YSCell alloc] init];
             [rows addObject:newCell];
-            
         }
         
         [self.columnsOfRows addObject:rows];
-        
     }
-    
-    NSLog(@"%@", self.columnsOfRows);
     
     _xSize = xSize;
     _ySize = ySize;
@@ -57,6 +49,14 @@
             [self checkRulesForIndexPath:xCount andY:yCount];
         }
     }
+    for(int xCount = 0 ; xCount<self.xSize ;  xCount++){
+        for(int yCount = 0 ; yCount < self.ySize ; yCount++ ){
+            YSCell * cell = [self getCellForIndexPath:xCount andY:yCount];
+            [cell nextGeneration];
+        }
+    }
+    
+    
 }
 
 - (void)checkRulesForIndexPath:(NSInteger) x andY: (NSInteger) y
@@ -69,7 +69,7 @@
     }else if (cell.isAlive && numberOfAliveNeighbors > 3){
         [cell death];
     } else if (cell.isAlive && (numberOfAliveNeighbors == 2 || numberOfAliveNeighbors == 3)){
-        return;
+        [cell birth];
     } else if ((!cell.isAlive) && numberOfAliveNeighbors == 3){
         [cell birth];
     }
@@ -102,7 +102,9 @@
     for (YSCell * cell in neighbors) {
         if (cell.isAlive) counter++;
     }
+    NSLog(@"%d",counter);
     return counter;
+    
 }
 
 @end

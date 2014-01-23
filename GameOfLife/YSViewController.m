@@ -99,7 +99,6 @@
 
 -(void)buttonPressed:(UIButton*)sender{
     YSButton *button = (YSButton *)sender;
-    NSLog(@"this happened %@" ,  button.titleLabel.text);
     [self.grid toggleCellAtIndexPath:button.xIndex andY:button.yIndex];
     [self updateUI];
 }

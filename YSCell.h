@@ -11,10 +11,11 @@
 @interface YSCell : NSObject
 
 @property (nonatomic) BOOL isAlive;
+@property (nonatomic) BOOL nextGenerationState;
 
 
 - (YSCell *) init;
 - (void) birth;
 - (void) death;
-
+- (void) nextGeneration;
 @end

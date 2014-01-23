@@ -18,12 +18,16 @@
 }
 
 - (void) birth {
-    self.isAlive = YES;
+    self.nextGenerationState = YES;
 }
 
 
 - (void) death {
-    self.isAlive = NO;
+    self.nextGenerationState = NO;
+}
+
+- (void) nextGeneration{
+    self.isAlive = self.nextGenerationState;
 }
 
 @end
