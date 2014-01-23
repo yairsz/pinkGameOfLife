@@ -23,6 +23,7 @@
 		B03989C718919AD4005265F5 /* GameOfLifeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B03989C618919AD4005265F5 /* GameOfLifeTests.m */; };
 		B03989D218919B11005265F5 /* YSCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B03989D118919B11005265F5 /* YSCell.m */; };
 		B03989D518919CE8005265F5 /* YSGrid.m in Sources */ = {isa = PBXBuildFile; fileRef = B03989D418919CE8005265F5 /* YSGrid.m */; };
+		B03989D81891C27C005265F5 /* YSButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B03989D71891C27C005265F5 /* YSButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,8 @@
 		B03989D118919B11005265F5 /* YSCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSCell.m; sourceTree = "<group>"; };
 		B03989D318919CE8005265F5 /* YSGrid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSGrid.h; sourceTree = "<group>"; };
 		B03989D418919CE8005265F5 /* YSGrid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSGrid.m; sourceTree = "<group>"; };
+		B03989D61891C27C005265F5 /* YSButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSButton.h; sourceTree = "<group>"; };
+		B03989D71891C27C005265F5 /* YSButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +130,8 @@
 				B03989AD18919AD3005265F5 /* Main.storyboard */,
 				B03989B018919AD3005265F5 /* YSViewController.h */,
 				B03989B118919AD3005265F5 /* YSViewController.m */,
+				B03989D61891C27C005265F5 /* YSButton.h */,
+				B03989D71891C27C005265F5 /* YSButton.m */,
 				B03989B318919AD3005265F5 /* Images.xcassets */,
 				B03989A218919AD3005265F5 /* Supporting Files */,
 			);
@@ -210,6 +215,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "The 2 Handed Consortium";
 				TargetAttributes = {
+					B039899718919AD3005265F5 = {
+						DevelopmentTeam = BN2X5T48YN;
+					};
 					B03989B818919AD3005265F5 = {
 						TestTargetID = B039899718919AD3005265F5;
 					};
@@ -261,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B03989B218919AD3005265F5 /* YSViewController.m in Sources */,
+				B03989D81891C27C005265F5 /* YSButton.m in Sources */,
 				B03989D518919CE8005265F5 /* YSGrid.m in Sources */,
 				B03989AC18919AD3005265F5 /* YSAppDelegate.m in Sources */,
 				B03989A818919AD3005265F5 /* main.m in Sources */,
@@ -393,10 +402,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GameOfLife/GameOfLife-Prefix.pch";
 				INFOPLIST_FILE = "GameOfLife/GameOfLife-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -406,10 +418,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GameOfLife/GameOfLife-Prefix.pch";
 				INFOPLIST_FILE = "GameOfLife/GameOfLife-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

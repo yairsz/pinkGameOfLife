@@ -7,23 +7,20 @@
 //
 
 #import "YSGrid.h"
-#import "YSCell.h"
-
-#define X_SIZE 10
-#define Y_SIZE 10
 
 @implementation YSGrid
 
--(id)init{
+-(YSGrid *) initWithXSize:(NSInteger)xSize andYSize:(NSInteger)ySize
+{
     self = [super init];
     
     self.columnsOfRows = [NSMutableArray new];
     
-    for(int xCount = 0 ; xCount<X_SIZE ;  xCount++){
+    for(int xCount = 0 ; xCount < xSize ;  xCount++){
         
         NSMutableArray *rows = [NSMutableArray new];
         
-        for(int yCount = 0 ; yCount < Y_SIZE ; yCount++ ){
+        for(int yCount = 0 ; yCount < ySize ; yCount++ ){
             
             YSCell *newCell = [[YSCell alloc] init];
             [rows addObject:newCell];
@@ -36,8 +33,8 @@
     
     NSLog(@"%@", self.columnsOfRows);
     
-    _xSize = X_SIZE;
-    _ySize = Y_SIZE;
+    _xSize = xSize;
+    _ySize = ySize;
     
     return self;
     
@@ -55,8 +52,8 @@
 
 - (void)cycleOnce
 {
-    for(int xCount = 0 ; xCount<X_SIZE ;  xCount++){
-        for(int yCount = 0 ; yCount < Y_SIZE ; yCount++ ){
+    for(int xCount = 0 ; xCount<self.xSize ;  xCount++){
+        for(int yCount = 0 ; yCount < self.ySize ; yCount++ ){
             [self checkRulesForIndexPath:xCount andY:yCount];
         }
     }
@@ -71,19 +68,17 @@
         [cell death];
     }else if (cell.isAlive && numberOfAliveNeighbors > 3){
         [cell death];
-    }else if ((!cell.isAlive) && numberOfAliveNeighbors == 3){
+    } else if (cell.isAlive && (numberOfAliveNeighbors == 2 || numberOfAliveNeighbors == 3)){
+        return;
+    } else if ((!cell.isAlive) && numberOfAliveNeighbors == 3){
         [cell birth];
     }
-    
-    
-    
-    
 }
 
 - (YSCell *)getCellForIndexPath:(NSInteger) x andY: (NSInteger) y
 {
     //check for grid limits
-    if ((x < 0) ||(x >= X_SIZE) || (y < 0) || (y >= Y_SIZE)){
+    if ((x < 0) ||(x >= self.xSize) || (y < 0) || (y >= self.ySize)){
         return [[YSCell alloc] init];
     }
     NSMutableArray *column = [self.columnsOfRows objectAtIndex:x];
@@ -93,7 +88,7 @@
 
 - (NSInteger) numberOfAliveNeighborsForCellAtIndexPath:(NSInteger)x andY:(NSInteger)y
 {
-    NSMutableArray *neighbors = [NSMutableArray new];
+    NSMutableArray *neighbors = [NSMutableArray new]; //add all neighbors to matrix
     [neighbors addObject:[self getCellForIndexPath:x - 1 andY:y -1]] ;
     [neighbors addObject:[self getCellForIndexPath:x andY:y -1]];
     [neighbors addObject:[self getCellForIndexPath:x + 1 andY:y -1]];
