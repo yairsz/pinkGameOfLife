@@ -19,11 +19,13 @@
 
 - (void) birth {
     self.nextGenerationState = YES;
+    
 }
 
 
 - (void) death {
     self.nextGenerationState = NO;
+    self.hasBeenAlive = YES;
 }
 
 - (void) nextGeneration{

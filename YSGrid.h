@@ -15,10 +15,11 @@
 @property (nonatomic) NSInteger xSize;
 @property (nonatomic) NSInteger ySize;
 
-- (YSCell *)getCellForIndexPath:(NSInteger) x andY: (NSInteger) y;
+
+- (YSCell *) getCellForIndexPath:(NSInteger) x andY: (NSInteger) y;
 - (YSGrid *) initWithXSize:(NSInteger) xSize andYSize:(NSInteger) ySize;
-- (void)toggleCellAtIndexPath:(NSInteger)x andY:(NSInteger)y;
--(void)cycleOnce;
+- (void) toggleCellAtIndexPath:(NSInteger)x andY:(NSInteger)y;
+- (void) cycleOnce;
 
 
 @end

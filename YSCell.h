@@ -8,14 +8,21 @@
 
 #import <Foundation/Foundation.h>
 
+//The Cell class is the model representation of each square on the grid.
+
 @interface YSCell : NSObject
 
 @property (nonatomic) BOOL isAlive;
 @property (nonatomic) BOOL nextGenerationState;
+@property (nonatomic) BOOL hasBeenAlive;
 
 
-- (YSCell *) init;
+- (YSCell *) init; // Init class returns a "dead" cell
+
+//birth and death will always happen in the next generation
 - (void) birth;
 - (void) death;
+
+//next generation will actually change the isAlive to next genration state
 - (void) nextGeneration;
 @end

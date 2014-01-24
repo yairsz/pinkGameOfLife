@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "YSCell.h"
 
-@interface YSButton : UIButton
+@interface YSButton : UIView
 
 @property (nonatomic) NSInteger xIndex;
 @property (nonatomic) NSInteger yIndex;
